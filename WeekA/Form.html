@@ -31,17 +31,20 @@
     <br>
 
     <form action="Congrats.html" method="POST">
-            radio buttons: 
-            <br>
-            <input type="radio" name="penguinType" value="emperor" checked />Emperor<br>
-            <input type="radio" name="penguinType" value="macaroni" />Macaroni<br>
-            <input type="radio" name="penguinType" value="rockhopper" />Rock Hopper<br>
-            check boxes: 
-            <br>
-            <input type="checkbox" name="cactusType" value="saguaro"/>Saguaro<br>
-            <input type="checkbox" name="cactusType" value="prickly pear"/>Prickly Pear<br>
-            <input type="checkbox" name="cactusType" value="Christmas"/>Christmas<br>
-             <!--value attribute determines what text will be one the button-->
+            <!--fieldset from HTML5 to separate out related fields-->
+            <fieldset>
+                <legend>radio buttons: </legend>
+                <input type="radio" name="penguinType" value="emperor" checked />Emperor<br>
+                <input type="radio" name="penguinType" value="macaroni" />Macaroni<br>
+                <input type="radio" name="penguinType" value="rockhopper" />Rock Hopper<br>
+            </fieldset>
+            <fieldset>
+                <legend>check boxes:</legend>
+                <input type="checkbox" name="cactusType" value="saguaro"/>Saguaro<br>
+                <input type="checkbox" name="cactusType" value="prickly pear"/>Prickly Pear<br>
+                <input type="checkbox" name="cactusType" value="Christmas"/>Christmas<br>
+             </fieldset>
+                <!--value attribute determines what text will be one the button-->
              <input type="submit" value="Submit"/>
     </form>
 </body>
