@@ -100,5 +100,19 @@ function largestOfThree(a,b,c){
 }
 
 function largestInArray(numArray) {
+
+    let largest = numArray[0];
+
+    for(i=1;i<numArray.length;i++){
+    if(numArray[i]>largest){
+
+        largest = numArray[i];
+
+    }
+}
+    
+return largest; 
+
+
     //use a loop to find largest value
 }
