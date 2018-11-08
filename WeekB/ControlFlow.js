@@ -41,4 +41,64 @@ let myBoolean = true;
 // == performs type coercion - converts second arg to dataype of first arg
 // then compares
 
+function func(){
+    if (myBoolean == true) {
+        console.log("my boolean is true!");
+    } else {
+        console.log("my boolean is false!");
+    }
+}
 
+//experiment with truthy and falsy
+function truthyFalsy(x){
+    if (x){
+        console.log(x+" is truthy");
+    } else {
+        console.log(x+" is falsy");
+    }
+}
+
+function largestOfThree(a,b,c){
+    //check whether input is of type number
+    //evaluate whether the conversion to number fails for 
+    //ANY of the inputs
+    //if so, return NaN and exit the function
+    if (isNaN(Number(a)) || isNaN(Number(b)) || isNaN(Number(c))){
+        return NaN; //exit function with value NaN
+    } 
+    //ok, so now we can actually do the comparison!
+    //only way we can get to this point in the function
+    //is if the if-statement condition if not satisfied
+    //(could also use an else block)
+
+    //problem - what if a and b are equal and larger than c?
+    /*
+    if (a > b && a > c) {
+        return a;
+    } else if (b > a && b > c) {
+        return b;
+    } else {
+        return c;
+    }
+    */
+
+    //another approach
+    let largest = a;
+
+    if (b > largest) {
+        largest = b;
+    }
+    if (c > largest) {
+        largest = c;
+    }
+
+    //notice the pattern!
+    //moving through other values and comparing each one to 'largest'
+    //if current value is larger than 'largest', set it as 'largest'
+
+    return largest;
+}
+
+function largestInArray(numArray) {
+    //use a loop to find largest value
+}
