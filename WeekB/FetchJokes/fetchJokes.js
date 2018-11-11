@@ -7,6 +7,7 @@ const apiUrl = 'https://icanhazdadjoke.cm/';
 //long form of
 //function getJokeWithFetch(){...}
 
+//using promises
 let getJokeWithFetch = function() {
     fetch(apiUrl, {method: "GET", headers:{"Accept":"application/json"}})
     //define behavior for when the response returns
