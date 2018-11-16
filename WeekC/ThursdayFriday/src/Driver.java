@@ -1,6 +1,21 @@
 public class Driver {
 
 	public static void main(String[] args) {
+		//Make some cars
+		Car myCar = new Car(2016,"Elantra","Hyundai");
+		Car myOtherCar = new Car(2018,"Model M","Tesla");
+		myCar.setMilesSinceOilChange(100);
+		if (myCar.getMilesSinceOilChange() >= Car.milesBetweenOilChanges){
+			System.out.println("Time to change the oil");
+		} else {
+			int milesLeft = Car.milesBetweenOilChanges - myCar.getMilesSinceOilChange();
+			System.out.println("You have "+milesLeft+" miles left");
+		}
+		
+	}
+
+
+	public static void init(){
 		
 		System.out.println("this is the point of entry into my program");
 		
