@@ -14,11 +14,15 @@ public class Car extends Vehicle {
 		this.model = model;
 		this.make = make;
 	}
+
+	//declared a static variable and assigned it a value of 5000
+	public static int milesBetweenOilChanges = 5000;
 	
 	//private instance variables, accessible only within the class	
 	private int yearManufactured;
 	private String model;
 	private String make;
+	private int milesSinceOilChange; //this instance variable tracks how many miles since last oil change
 
 	//getters and setters (accessors and mutators)
 	public int getYearManufactured(){
@@ -33,6 +37,10 @@ public class Car extends Vehicle {
 		return this.make;
 	}
 
+	public int getMilesSinceOilChange(){
+		return this.milesSinceOilChange;
+	}
+
 	public void setYearManufactured(int year){
 		this.yearManufactured = year;
 	}
@@ -43,6 +51,10 @@ public class Car extends Vehicle {
 
 	public void setMake(String make){
 		this.make = make;
+	}
+
+	public void setMilesSinceOilChange(int miles){
+		this.milesSinceOilChange = miles;
 	}
 
 	//override inherited move() method 
