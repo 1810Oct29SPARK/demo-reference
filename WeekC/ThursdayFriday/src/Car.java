@@ -1,6 +1,6 @@
 //first POJO! 
 
-public class Car {
+public class Car extends Vehicle {
 
 	//constructor with no field (a "no-args" constructor)
 	public Car(){
@@ -44,4 +44,11 @@ public class Car {
 	public void setMake(String make){
 		this.make = make;
 	}
+
+	//override inherited move() method 
+	@Override		//doesn't DO anything, but will fail to compile if no matching superclass method
+	public void move(){
+		System.out.println("Car is moving");
+	}
+
 }

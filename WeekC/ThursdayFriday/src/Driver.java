@@ -23,6 +23,9 @@ public class Driver {
 		//reset the model of carTwo
 		carTwo.setModel("NotDeLorean");
 		System.out.println("model of carTwo: "+carTwo.getModel());
+	
+		//test out carTwo's inherited move() method
+		carTwo.move();
 	}
 
 }
