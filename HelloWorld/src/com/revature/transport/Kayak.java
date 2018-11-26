@@ -6,10 +6,12 @@ public class Kayak extends Boat {
 		super(color, hullLengthInMeters);
 		this.numSeats = numSeats;
 		this.paddleLengthInMeters = paddleLengthInMeters;
+		System.out.println("kayak args constructor completed");
 	}
 
 	public Kayak() {
 		super();
+		System.out.println("kayak noargs constructor completed");
 	}
 
 	private int numSeats;

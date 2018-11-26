@@ -4,12 +4,14 @@ public class Boat extends Vehicle {
 	
 	public Boat() {
 		super();
+		System.out.println("boat noargs constructor completed");
 	}
 
 	public Boat(String color, double hullLengthInMeters) {
-		super();
+		this();
 		this.color = color;
 		this.hullLengthInMeters = hullLengthInMeters;
+		System.out.println("boat args constructor completed");
 	}
 
 	protected String color;

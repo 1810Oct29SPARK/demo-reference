@@ -9,6 +9,7 @@ public abstract class Vehicle {
 	
 	public Vehicle() {
 		super(); //calls Object()
+		System.out.println("vehicle constructor completed");
 	}
 
 	/*
