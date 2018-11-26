@@ -75,27 +75,27 @@ public class ControlFlow {
 		 * switch statement allows us to execute different behavior based on an
 		 * expression can be byte, short, char, int, Enum, String, wrapper class
 		 */
-		String dayOfWeek = "NOW!";
+		DaysOfTheWeek dayOfWeek = DaysOfTheWeek.TUESDAY;
 		switch (dayOfWeek) {
-		case "Sunday":
+		case SUNDAY:
 			System.out.println("today is Sunday");
 			break;
-		case "Monday":
+		case MONDAY:
 			System.out.println("today is Monday");
 			break;
-		case "Tuesday":
+		case TUESDAY:
 			System.out.println("today is Tuesday");
 			break;
-		case "Wednesday":
+		case WEDNESDAY:
 			System.out.println("today is Wednesday");
 			break;
-		case "Thursday":
+		case THURSDAY:
 			System.out.println("today is Thursday");
 			break;
-		case "Friday":
+		case FRIDAY:
 			System.out.println("today is Friday");
 			break;
-		case "Saturday":
+		case SATURDAY:
 			System.out.println("today is Saturday");
 			break;
 		default:

@@ -1,6 +1,6 @@
 package com.revature.transport;
 
-public class Car extends Vehicle {
+public class Car extends Vehicle implements Steerable {
 	
 	public Car(int yearManufactured, String model, String make, double milesSinceOilChange) {
 		super();
@@ -14,7 +14,7 @@ public class Car extends Vehicle {
 		super(); // calls Vehicle()
 	}
 
-	public static int recommendedMiBtwnOilChanges = 5000;
+	public static final int recommendedMiBtwnOilChanges = 5000;
 	
 	private int yearManufactured;
 	private String model;
@@ -62,6 +62,16 @@ public class Car extends Vehicle {
 	public String toString() {
 		return "Car [yearManufactured=" + yearManufactured + ", model=" + model + ", make=" + make
 				+ ", milesSinceOilChange=" + milesSinceOilChange + "]";
+	}
+
+	@Override
+	public void turnRight() {
+		System.out.println("turn wheel clockwise");
+	}
+
+	@Override
+	public void turnLeft() {
+		System.out.println("turn wheel counterclockwise");
 	}
 
 }

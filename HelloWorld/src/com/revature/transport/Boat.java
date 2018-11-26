@@ -1,6 +1,6 @@
 package com.revature.transport;
 
-public class Boat extends Vehicle {
+public class Boat extends Vehicle implements Steerable {
 	
 	public Boat() {
 		super();
@@ -42,6 +42,16 @@ public class Boat extends Vehicle {
 	@Override
 	public String toString() {
 		return "Boat [color=" + color + ", hullLengthInMeters=" + hullLengthInMeters + "]";
+	}
+
+	@Override
+	public void turnRight() {
+		System.out.println("paddle right");
+	}
+
+	@Override
+	public void turnLeft() {
+		System.out.println("paddle left");
 	}
 
 }
