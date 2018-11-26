@@ -58,4 +58,10 @@ public class Car extends Vehicle {
 		this.milesSinceOilChange = milesSinceOilChange;
 	}
 
+	@Override
+	public String toString() {
+		return "Car [yearManufactured=" + yearManufactured + ", model=" + model + ", make=" + make
+				+ ", milesSinceOilChange=" + milesSinceOilChange + "]";
+	}
+
 }
