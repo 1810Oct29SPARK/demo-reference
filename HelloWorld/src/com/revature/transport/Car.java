@@ -1,6 +1,13 @@
 package com.revature.transport;
 
-public class Car extends Vehicle implements Steerable, Comparable<Car> {
+import java.io.Serializable;
+
+public class Car extends Vehicle implements Steerable, Comparable<Car>, Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5368952799837833033L;
 
 	public Car(int yearManufactured, String model, String make, double milesSinceOilChange) {
 		super();
@@ -19,7 +26,7 @@ public class Car extends Vehicle implements Steerable, Comparable<Car> {
 	private int yearManufactured;
 	private String model;
 	private String make;
-	private double milesSinceOilChange;
+	private transient double milesSinceOilChange;
 
 	@Override
 	public void move() throws MaintenanceException {
