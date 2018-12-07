@@ -100,3 +100,4 @@ local.properties
 # End of https://www.gitignore.io/api/eclipse
 Servers/
 */target/
+*/connection.properties
