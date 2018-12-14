@@ -3,6 +3,7 @@
   <groupId>com.revature</groupId>
   <artifactId>JDBCDemo</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
   
   <!-- setting the Java version to 8 -->
   <properties>
