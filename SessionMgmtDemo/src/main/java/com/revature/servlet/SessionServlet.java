@@ -19,6 +19,7 @@ public class SessionServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// grab current session, if it exists
+		response.setContentType("application/json");
 		HttpSession session = request.getSession(false);
 		if (session != null && session.getAttribute("username") != null) {
 			try {
