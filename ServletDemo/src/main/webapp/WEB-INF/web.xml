@@ -20,21 +20,6 @@
     <url-pattern>/hello</url-pattern>
   </servlet-mapping>
   <servlet>
-    <description></description>
-    <display-name>BearServlet</display-name>
-    <servlet-name>BearServlet</servlet-name>
-    <servlet-class>com.revature.servlet.BearServlet</servlet-class>
-    <!-- adds param to servletConfig -->
-  	<init-param>
-  		<param-name>servletMessage</param-name>
-  		<param-value>Hello_From_Bears</param-value>
-  	</init-param>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>BearServlet</servlet-name>
-    <url-pattern>/bears</url-pattern>
-  </servlet-mapping>
-  <servlet>
     <servlet-name>CalculatorServlet</servlet-name>
     <servlet-class>com.revature.servlet.CalculatorServlet</servlet-class>
   </servlet>
