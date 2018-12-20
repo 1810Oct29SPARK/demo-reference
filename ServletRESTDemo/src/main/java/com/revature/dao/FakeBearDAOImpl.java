@@ -1,6 +1,7 @@
 package com.revature.dao;
 
 import java.time.LocalDate;
+import java.time.Month;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -17,8 +18,8 @@ public class FakeBearDAOImpl implements BearDAO {
 		Cave c1 = new Cave(3, "Tampa", 5);
 		BearType bt = new BearType(7,"Grizzly");
 		BearType bt2  = new BearType(9,"Polar");
-		myBears.add(new Bear(5, "Susan", c1, bt2, 600, LocalDate.now()));
-		myBears.add(new Bear(81, "Bob", c1, bt, 650, LocalDate.now()));
+		myBears.add(new Bear(5, "Susan", c1, bt2, 600, LocalDate.of(2000, Month.APRIL, 15)));
+		myBears.add(new Bear(81, "Bob", c1, bt, 650, LocalDate.of(1970, Month.NOVEMBER, 30)));
 	}
 
 	public List<Bear> allBears() {
