@@ -6,7 +6,7 @@ import { BearType } from '../models/bear-type.model';
 @Injectable()
 export class BearService {
     public getBears(): Bear[] {
-        const bears: Array<Bear> = null;
+        const bears: Array<Bear> = new Array();
         const cave1: Cave = new Cave(7, 'Tampa', 6);
         const bearType1: BearType = new BearType(4, 'Grizzly');
         bears.push(new Bear(3, 'Betty', cave1, bearType1, 300, new Date()));
