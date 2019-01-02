@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<!-- the above specifies the DTD (or Document Type Definition) for a Hibernate 
+	config file. -->
+<!-- this file is considered "valid" if it conforms to the allowed elements 
+	listed in the DTD (or XSD, XML Schema Definition) -->
+<!-- an XML file can be "well-formed" without being "valid" -->
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+		<property name="hibernate.current_session_context_class">thread</property>
+	</session-factory>
+</hibernate-configuration>
