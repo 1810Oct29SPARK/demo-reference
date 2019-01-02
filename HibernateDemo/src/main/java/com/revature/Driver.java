@@ -11,10 +11,13 @@ public class Driver {
 	public static void main(String[] args) {
 		
 		CaveDAO cd  = new CaveDAOImpl();
+		
 		List<Cave> caveList = cd.getAllCaves();
 		for (Cave c : caveList) {
 			System.out.println(c);
 		}
+		
+		cd.addCave(new Cave("Rivendell", 200));
 		
 	}
 

@@ -11,12 +11,15 @@ import com.revature.beans.Cave;
 import com.revature.util.HibernateUtil;
 
 public class CaveDAOImpl implements CaveDAO {
+	
+	private SessionFactory sf = HibernateUtil.getSessionFactory();
+	
+	
 
 	@Override
 	public Cave getCaveById(int id) {
 		Cave c = null;
-		try (SessionFactory sf = HibernateUtil.getSessionFactory()) {
-			Session s = sf.getCurrentSession();
+		try (Session s = sf.getCurrentSession()) {
 			Transaction tx = s.beginTransaction();
 			c = (Cave) s.get(Cave.class, id);
 			tx.commit();
@@ -29,8 +32,7 @@ public class CaveDAOImpl implements CaveDAO {
 	public List<Cave> getAllCaves() {
 		List<Cave> caves = new ArrayList<>();
 		//use a Query to retrieve all caves
-		try (SessionFactory sf = HibernateUtil.getSessionFactory()) {
-			Session s = sf.getCurrentSession();
+		try (Session s = sf.getCurrentSession()) {
 			Transaction tx = s.beginTransaction();
 			caves = s.createQuery("from Cave").getResultList();
 			tx.commit();
@@ -41,8 +43,7 @@ public class CaveDAOImpl implements CaveDAO {
 
 	@Override
 	public void addCave(Cave cave) {
-		try (SessionFactory sf = HibernateUtil.getSessionFactory()) {
-			Session s = sf.getCurrentSession();
+		try (Session s = sf.getCurrentSession()) {
 			Transaction tx = s.beginTransaction();
 			s.persist(cave);
 			tx.commit();
