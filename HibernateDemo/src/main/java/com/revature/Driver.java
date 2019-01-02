@@ -1,19 +1,19 @@
 package com.revature;
 
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
+import java.util.List;
 
-import com.revature.util.HibernateUtil;
+import com.revature.beans.Cave;
+import com.revature.dao.CaveDAO;
+import com.revature.dao.CaveDAOImpl;
 
 public class Driver {
 
 	public static void main(String[] args) {
 		
-		//create a session
-		try(SessionFactory sf = HibernateUtil.getSessionFactory()){
-			Session s = sf.getCurrentSession();
-			System.out.println(s.toString());
-			s.close();
+		CaveDAO cd  = new CaveDAOImpl();
+		List<Cave> caveList = cd.getAllCaves();
+		for (Cave c : caveList) {
+			System.out.println(c);
 		}
 		
 	}
