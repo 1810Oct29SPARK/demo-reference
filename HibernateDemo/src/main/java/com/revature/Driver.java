@@ -15,7 +15,7 @@ public class Driver {
 		
 		CaveDAO cd  = new CaveDAOImpl();
 		SessionFactory sf = HibernateUtil.getSessionFactory();
-		funWithSessionMethods(sf);
+		//funWithSessionMethods(sf);
 		
 	/*	List<Cave> caveList = cd.getAllCaves();
 		for (Cave c : caveList) {
@@ -42,11 +42,38 @@ public class Driver {
 		Cave c3  = s.load(Cave.class, 1050);
 		c3.getName();
 		
+		//save and persist
+		//System.out.println(s.save(c3)); //get our generated id... but this was already persistent
+		
 		tx.commit();
 		s.close();
 		
 		//throws a LazyInitializationException if it was not used inside the session
 		System.out.println(c3);
+		
+		//create another session, c3 is still detached 
+		Session s2 = sf.getCurrentSession();
+		Transaction tx2 = s2.beginTransaction();
+		
+		//throws exception
+		//s2.persist(c3);
+		
+		//s2.save(c3); //creates duplicate record with new PK 
+		
+		//update and merge
+		
+		Cave c4 = new Cave(1056, "USF", 300);
+		s2.update(c4);
+		
+		//get a persistent cave
+		Cave c5 = s2.get(Cave.class, 1); //in persistent state
+		c5.setName("Norway"); //automatic dirty checking will update this at end of session
+		
+		//update entity that does not exist
+		//s2.update(new Cave(33,"thirty three", 33));
+		
+		tx2.commit();
+		s2.close();
 	}
 
 }

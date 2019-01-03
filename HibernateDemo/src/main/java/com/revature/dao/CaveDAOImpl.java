@@ -53,14 +53,22 @@ public class CaveDAOImpl implements CaveDAO {
 
 	@Override
 	public void updateCave(Cave cave) {
-		// TODO Auto-generated method stub
-
+		try (Session s = sf.getCurrentSession()) {
+			Transaction tx = s.beginTransaction();
+			s.update(cave);
+			tx.commit();
+			s.close();
+		}
 	}
 
 	@Override
 	public void deleteCave(Cave cave) {
-		// TODO Auto-generated method stub
-
+		try (Session s = sf.getCurrentSession()) {
+			Transaction tx = s.beginTransaction();
+			s.delete(cave);
+			tx.commit();
+			s.close();
+		}
 	}
 
 }
