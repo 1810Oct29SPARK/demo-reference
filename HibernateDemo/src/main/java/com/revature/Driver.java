@@ -13,7 +13,7 @@ public class Driver {
 
 	public static void main(String[] args) {
 		
-		CaveDAO cd  = new CaveDAOImpl();
+		//CaveDAO cd  = new CaveDAOImpl();
 		SessionFactory sf = HibernateUtil.getSessionFactory();
 		//funWithSessionMethods(sf);
 		

@@ -3,6 +3,7 @@ package com.revature.beans;
 import java.time.LocalDate;
 
 import javax.persistence.Column;
+import javax.persistence.ConstraintMode;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -12,12 +13,13 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.ForeignKey;
 
 @Entity
 @Table(name="BEAR")
 public class Bear {
 
-	public Bear(int id, String name, Cave cave, BearType bearType, double weight, LocalDate birthdate) {
+	public Bear(int id, String name, Cave cave, BearType bearType, float weight, LocalDate birthdate) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -38,15 +40,15 @@ public class Bear {
 	private String name;
 
 	@ManyToOne(fetch=FetchType.EAGER)
-	@JoinColumn(name="CAVE_ID")
+	@JoinColumn(name="CAVE_ID",foreignKey=@ForeignKey(ConstraintMode.NO_CONSTRAINT))
 	private Cave cave;
 	
 	@ManyToOne(fetch=FetchType.EAGER)
-	@JoinColumn(name="BEAR_TYPE_ID")
+	@JoinColumn(name="BEAR_TYPE_ID",foreignKey=@ForeignKey(ConstraintMode.NO_CONSTRAINT))
 	private BearType bearType;
 	
 	@Column(name="WEIGHT")
-	private double weight;
+	private float weight;
 	@Column(name="BIRTHDATE")
 	private LocalDate birthdate;
 	
@@ -74,10 +76,10 @@ public class Bear {
 	public void setBearType(BearType bearType) {
 		this.bearType = bearType;
 	}
-	public double getWeight() {
+	public float getWeight() {
 		return weight;
 	}
-	public void setWeight(double weight) {
+	public void setWeight(float weight) {
 		this.weight = weight;
 	}
 	public LocalDate getBirthdate() {
