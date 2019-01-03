@@ -23,7 +23,7 @@ public class CaveDAOImpl implements CaveDAO {
 			Transaction tx = s.beginTransaction();
 			c = (Cave) s.get(Cave.class, id);
 			tx.commit();
-			s.close();
+			//s.close();
 		}
 		return c;
 	}
