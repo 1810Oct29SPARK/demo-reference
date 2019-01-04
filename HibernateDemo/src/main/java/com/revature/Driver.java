@@ -1,28 +1,73 @@
 package com.revature;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
+import com.revature.beans.Bear;
+import com.revature.beans.BearType;
+import com.revature.beans.Beehive;
 import com.revature.beans.Cave;
-import com.revature.dao.CaveDAO;
-import com.revature.dao.CaveDAOImpl;
 import com.revature.util.HibernateUtil;
 
 public class Driver {
 
 	public static void main(String[] args) {
 		
-		//CaveDAO cd  = new CaveDAOImpl();
 		SessionFactory sf = HibernateUtil.getSessionFactory();
 		//funWithSessionMethods(sf);
+		/*List<Bear> bearList = funWithNamedQueries(sf);
+		for (Bear b: bearList) {
+			System.out.println(b.getBearType());//ok
+			System.out.println(b.getCave());//not ok if Cave is lazily fetched
+		}*/
+		funWithMappings(sf);
 		
-	/*	List<Cave> caveList = cd.getAllCaves();
-		for (Cave c : caveList) {
-			System.out.println(c);
+	}
+	
+	static void funWithMappings(SessionFactory sf) {
+		Session s = sf.openSession();
+		Transaction tx = s.beginTransaction();
+		
+		//get list of bears of a certain type from BearType
+		BearType bt = (BearType) s.get(BearType.class, 1);
+		System.out.println(bt.getName());
+		System.out.println(bt.getBears());
+		
+		Bear b = s.get(Bear.class, 12);
+		
+		for (Beehive bh : b.getBeehives()) {
+			System.out.println(bh);
 		}
 		
-		cd.addCave(new Cave("Rivendell", 200)); */
+		tx.commit();
+		s.close();
+	}
+	
+	static List<Bear> funWithNamedQueries(SessionFactory sf) {
+		
+		Session s = sf.openSession();
+		Transaction tx = s.beginTransaction();
+		/*
+		Query q = s.getNamedQuery("getAllBears");
+		List<Bear> bearList = q.getResultList();
+		System.out.println(bearList.size());
+		Iterator<Bear> it = bearList.iterator();
+		while (it.hasNext()) {
+			System.out.println(it.next());
+		}
+		*/
+		
+		Query q2 = s.createNamedQuery("getBearsByType",Bear.class);
+		q2.setParameter("typeVar", 1); //looking for Grizzly bears
+		List<Bear> grizzlies = q2.getResultList();
+		
+		tx.commit();
+		s.close();
+		return grizzlies;
 		
 	}
 	

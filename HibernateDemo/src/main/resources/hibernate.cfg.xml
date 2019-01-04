@@ -19,5 +19,6 @@
 		<mapping class="com.revature.beans.Cave"></mapping>
 		<mapping class="com.revature.beans.BearType"></mapping>
 		<mapping class="com.revature.beans.Bear"></mapping>
+		<mapping class="com.revature.beans.Beehive"></mapping>
 	</session-factory>
 </hibernate-configuration>
