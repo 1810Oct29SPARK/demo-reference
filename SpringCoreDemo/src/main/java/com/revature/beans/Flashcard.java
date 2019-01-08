@@ -1,27 +1,20 @@
 package com.revature.beans;
 
-public class Flashcard {
+public abstract class Flashcard {
 	
-	public Flashcard(String question, String answer, FlashcardTopics topic, Author author) {
+	public Flashcard(String question, String answer, FlashcardTopics topic) {
 		super();
 		this.question = question;
 		this.answer = answer;
 		this.topic = topic;
-		this.author = author;
-	}
-	@Override
-	public String toString() {
-		return "Flashcard [question=" + question + ", answer=" + answer + ", topic=" + topic + ", author=" + author
-				+ "]";
 	}
 	public Flashcard() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	private String question;
-	private String answer;
-	private FlashcardTopics topic;
-	private Author author;
+	protected String question;
+	protected String answer;
+	protected FlashcardTopics topic;
 	public String getQuestion() {
 		return question;
 	}
@@ -40,10 +33,6 @@ public class Flashcard {
 	public void setTopic(FlashcardTopics topic) {
 		this.topic = topic;
 	}
-	public Author getAuthor() {
-		return author;
-	}
-	public void setAuthor(Author author) {
-		this.author = author;
-	}
+	
+	public abstract void methodInFlashcard();
 }
