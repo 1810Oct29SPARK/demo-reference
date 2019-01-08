@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- scope="prototype" attribute would cause a new instance of Author to 
+		be created with each call to getBean("author") -->
+	<bean name="author" class="com.revature.beans.Author">
+		<!-- inject values into bean -->
+		<property name="firstName" value="Edgar"></property>
+		<property name="lastName" value="Poe"></property>
+	</bean>
+
+</beans>
