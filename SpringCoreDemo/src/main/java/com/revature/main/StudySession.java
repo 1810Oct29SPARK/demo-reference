@@ -20,7 +20,7 @@ public class StudySession {
 		// access IoC container
 		ApplicationContext ac = new ClassPathXmlApplicationContext("beans.xml");
 
-		funWithFlashcards(ac);
+		ac.getBean("lifecycleBean"); //demonstrate lifecycle methods
 
 		// close ApplicationContext
 		((AbstractApplicationContext) ac).close();

@@ -5,8 +5,12 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
 	 http://www.springframework.org/schema/beans/spring-beans.xsd
 	 http://www.springframework.org/schema/context 
-	 http://www.springframework.org/schema/context/spring-context-4.3.xsd">
-
+	 http://www.springframework.org/schema/context/spring-context-4.3.xsd"
+	default-init-method="defaultInit"
+	default-destroy-method="defaultDestroy">
+	<!-- the default init and destroy attributes specify which method in EVERY 
+		BEAN will be called at the appropriate lifecycle phase
+		this can also be set for specific beans instead of globally -->
 	<!-- scope="prototype" attribute would cause a new instance of Author to 
 		be created with each call to getBean("author") -->
 	<bean name="author" class="com.revature.beans.Author">
@@ -36,5 +40,6 @@
 		class="com.revature.beans.FlashcardWithAutoByType" autowire="byType"
 		scope="prototype"></bean>
 
-	<context:component-scan base-package="com.revature"></context:component-scan>
+	<context:component-scan
+		base-package="com.revature"></context:component-scan>
 </beans>
