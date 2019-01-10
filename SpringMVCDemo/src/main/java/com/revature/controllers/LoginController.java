@@ -3,11 +3,13 @@ package com.revature.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.servlet.view.RedirectView;
 
 import com.revature.beans.User;
 import com.revature.service.LoginService;
@@ -30,22 +32,24 @@ public class LoginController {
 	}
 
 	// handle form data sent to "/login"
-	@PostMapping(value = "/auth", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
-	public String handleFormRequest(@RequestBody MultiValueMap<String, String> formParams, Model m) {
+	@PostMapping(value = "/login", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+	public RedirectView handleFormRequest(@RequestBody MultiValueMap<String, String> formParams, RedirectAttributes attributes) {
 		//System.out.println("form params received: " + formParams);
 		// process form data
 		User u = loginService.validateUser(formParams.getFirst("username"), formParams.getFirst("password"));
-		// render result as a JSP using InternalResourceViewResolver
-		// return view name to be interpreted by IRVR
 		if (u == null) {
-			// show error
-			return "error";
+			// redirect to error page
+			return new RedirectView("error");
 		} else {
-			// pass user information into the Model
-			m.addAttribute("username",u.getUsername());
-			m.addAttribute("email",u.getEmail());
-			return "profile";
+			// redirect to profile
+			attributes.addFlashAttribute("user",u);
+			return new RedirectView("profile");
 		}
+	}
+	
+	@GetMapping(value="/error")
+	public String getErrorPage() {
+		return "error";
 	}
 
 }
