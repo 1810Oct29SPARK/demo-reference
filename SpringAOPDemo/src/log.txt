@@ -1,0 +1,14 @@
+2019-01-10 16:54:58 INFO  ClassPathXmlApplicationContext:578 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4f2410ac: startup date [Thu Jan 10 16:54:58 EST 2019]; root of context hierarchy
+2019-01-10 16:54:58 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [beans.xml]
+2019-01-10 16:54:59 INFO  root:17 - void com.revature.service.Animal.setSpeed(int)
+2019-01-10 16:54:59 INFO  root:17 - void com.revature.service.Person.wakeUpAnimal()
+2019-01-10 16:54:59 INFO  root:17 - void com.revature.service.Bear.animalChasesYou()
+2019-01-10 16:54:59 INFO  ClassPathXmlApplicationContext:960 - Closing org.springframework.context.support.ClassPathXmlApplicationContext@4f2410ac: startup date [Thu Jan 10 16:54:58 EST 2019]; root of context hierarchy
+2019-01-10 16:59:59 INFO  ClassPathXmlApplicationContext:578 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4f2410ac: startup date [Thu Jan 10 16:59:59 EST 2019]; root of context hierarchy
+2019-01-10 16:59:59 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [beans.xml]
+2019-01-10 16:59:59 INFO  root:18 - void com.revature.service.Animal.setSpeed(int)
+2019-01-10 16:59:59 INFO  root:18 - void com.revature.service.Person.wakeUpAnimal()
+2019-01-10 16:59:59 INFO  root:18 - void com.revature.service.Bear.animalChasesYou()
+2019-01-10 16:59:59 INFO  root:18 - void com.revature.service.Bear.setIsWinter(Boolean)
+2019-01-10 16:59:59 ERROR root:23 - void com.revature.service.Bear.bearHibernates() threw class java.lang.Exception with message bears hibernate in the winter
+2019-01-10 16:59:59 INFO  ClassPathXmlApplicationContext:960 - Closing org.springframework.context.support.ClassPathXmlApplicationContext@4f2410ac: startup date [Thu Jan 10 16:59:59 EST 2019]; root of context hierarchy
