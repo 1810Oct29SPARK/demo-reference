@@ -40,7 +40,7 @@ public class FakeBearDAOImpl implements BearDAO {
 		myBears.add(bear);
 	}
 
-	public Bear updateBear(Bear bear) {
+	public void updateBear(Bear bear) {
 		for (Bear b : myBears) {
 			if (b.getId() == bear.getId()) {
 				b.setName(bear.getName());
@@ -48,10 +48,8 @@ public class FakeBearDAOImpl implements BearDAO {
 				b.setBearType(bear.getBearType());
 				b.setWeight(bear.getWeight());
 				b.setBirthdate(bear.getBirthdate());
-				return b;
 			}
 		}
-		return null;
 	}
 
 	public void deleteBear(Bear bear) {
